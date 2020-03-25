@@ -45,7 +45,7 @@
 
  <v-col cols="6" v-if="wait">
 
-          <h3 class="mb-5">Updating</h3>
+          <h3 class="mb-5">Getting data </h3>
 
           <v-progress-linear
             color="blue-grey darken-4"
@@ -55,7 +55,6 @@
           ></v-progress-linear>
         </v-col>
 
-<!--
       <v-col cols="12" v-if="!wait">
          <v-data-table
     :headers="headers"
@@ -83,7 +82,7 @@
     </template>
   </v-data-table>
       </v-col>
--->
+
      
   
     </v-row>
@@ -161,7 +160,7 @@ let uganda  = await covid.getCountry({country: "Uganda"})
   sudan, rwanda, uganda);
 
   if(this.cases[0]){
-    //this.wait = false;
+    this.wait = false;
   }
 
     }
@@ -172,13 +171,14 @@ let uganda  = await covid.getCountry({country: "Uganda"})
 
 <style lang="scss" scoped>
 .container{
+  padding-top: 1rem;
  .main{
    background-color: white;
    border-radius: 3rem;
    padding: 1rem;
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
   .row{
     .imagel {
 
