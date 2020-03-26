@@ -123,11 +123,11 @@ this.getData();
     methods: {
 
 getTotal (item) {
-        if (item > 0) return 'blue-grey darken-4'
+        if (item > 0) return 'blue darken-4'
       },
 
 getcases (item) {
-        if (item > 0) return 'orange darken-4'
+        if (item > 0) return 'orange darken-3'
       },
 
        getDeath (deaths) {
@@ -171,7 +171,7 @@ let uganda  = await covid.getCountry({country: "Uganda"})
 
 <style lang="scss" scoped>
 .container{
-  padding-top: 1rem;
+  padding-top: 2rem;
  .main{
    background-color: white;
    border-radius: 3rem;
