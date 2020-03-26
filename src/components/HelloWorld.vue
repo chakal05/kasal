@@ -176,14 +176,9 @@ let uganda  = await covid.getCountry({country: "Uganda"})
    background-color: white;
    border-radius: 3rem;
    padding: 1rem;
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
   .row{
     .imagel {
-
-     margin-top: -2rem;
-   
+    margin-top: -2rem;
     }
   }
 
