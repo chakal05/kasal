@@ -91,8 +91,8 @@
 </template>
 
 <script>
-//import axios from 'axios';
-const covid = require('novelcovid');
+import axios from 'axios';
+//const covid = require('novelcovid');
   export default {
     data () {
       return {
@@ -145,19 +145,20 @@ getcases (item) {
 
     async  getData(){
       this.wait = true;
-let djibouti =  await covid.getCountry({country: "Djibouti"});
-let ethiopia = await covid.getCountry({country: "Ethiopia"})
-let eritrea = await covid.getCountry({country: "Eritrea"})
-let somalia = await covid.getCountry({country: "Somalia"})
-let kenya = await covid.getCountry({country: "Kenya"})
-let tanzania = await covid.getCountry({country: "Tanzania"})
-let sudan = await covid.getCountry({country: "Sudan"})
-let rwanda = await covid.getCountry({country: "Rwanda"})
-let uganda  = await covid.getCountry({country: "Uganda"})
+let djibouti =  await axios.get('https://corona.lmao.ninja/countries/262');
+let ethiopia = await axios.get('https://corona.lmao.ninja/countries/231');
+let eritrea = await axios.get('https://corona.lmao.ninja/countries/232');
+let somalia = await axios.get('https://corona.lmao.ninja/countries/706');
+let kenya = await axios.get('https://corona.lmao.ninja/countries/404');
+let tanzania =await axios.get('https://corona.lmao.ninja/countries/834');
+let sudan = await axios.get('https://corona.lmao.ninja/countries/736');
+let rwanda = await axios.get('https://corona.lmao.ninja/countries/646');
+let uganda  = await axios.get('https://corona.lmao.ninja/countries/800');
+let burundi  = await axios.get('https://corona.lmao.ninja/countries/108');
 
  
-  this.cases.push(djibouti, ethiopia, eritrea, somalia, kenya, tanzania,
-  sudan, rwanda, uganda);
+  this.cases.push(djibouti.data, ethiopia.data, eritrea.data, somalia.data, kenya.data, tanzania.data,
+  sudan.data, rwanda.data, uganda.data, burundi.data);
 
   if(this.cases[0]){
     this.wait = false;
