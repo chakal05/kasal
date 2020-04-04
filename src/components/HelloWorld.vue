@@ -22,7 +22,7 @@
 
       <v-spacer></v-spacer>
 
-        <h2 class="mr-5  font-weight-black"> DJIBARCHIVES </h2>
+        <h2 class="mr-5 mb-2  font-weight-black">djibarchives</h2>
     
  </v-toolbar>
       </v-col>
@@ -30,9 +30,9 @@
       <v-col cols="12" class="imagel">
         <v-img
           :src="require('../assets/LogoMakr_6XClbq.png')"
-          class="my-1"
+          class="ma-4"
           contain
-          height="100"
+          height="90"
         />
       </v-col>
 
@@ -92,7 +92,6 @@
 
 <script>
 import axios from 'axios';
-//const covid = require('novelcovid');
   export default {
     data () {
       return {
@@ -145,6 +144,7 @@ getcases (item) {
 
     async  getData(){
       this.wait = true;
+ //let world = await axios.get('https://corona.lmao.ninja/all');
 let djibouti =  await axios.get('https://corona.lmao.ninja/countries/262');
 let ethiopia = await axios.get('https://corona.lmao.ninja/countries/231');
 let eritrea = await axios.get('https://corona.lmao.ninja/countries/232');
@@ -157,7 +157,7 @@ let uganda  = await axios.get('https://corona.lmao.ninja/countries/800');
 let burundi  = await axios.get('https://corona.lmao.ninja/countries/108');
 
  
-  this.cases.push(djibouti.data, ethiopia.data, eritrea.data, somalia.data, kenya.data, tanzania.data,
+  this.cases.push( djibouti.data, ethiopia.data, eritrea.data, somalia.data, kenya.data, tanzania.data,
   sudan.data, rwanda.data, uganda.data, burundi.data);
 
   if(this.cases[0]){
