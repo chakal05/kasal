@@ -30,16 +30,16 @@
       <v-col cols="12" class="imagel">
         <v-img
           :src="require('../assets/LogoMakr_6XClbq.png')"
-          class="ma-4"
+          class="my-1"
           contain
           height="90"
         />
       </v-col>
 
       <v-col class="mb-4" cols="12">
-        <h1 class="display-1 font-weight-bold mb-3">
+        <h2 class="display-1 font-weight-bold mb-3">
          Coronavirus tracker in East Africa
-        </h1>
+        </h2>
 
       </v-col>
 
