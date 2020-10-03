@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: 'lobster', cursive;
+}
+
+main {
+  margin-bottom: 4rem;
+}
+
+main .landing {
+  background-color: #d33c2a;
+}
+
+main .landing header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .landing header .logo {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  width: 9%;
+}
+
+main .landing header nav .rightSide {
+  margin-top: 1.2rem;
+}
+
+main .landing header nav .rightSide .search {
+  height: 25px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+}
+
+main .landing header nav .rightSide a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  top: 0.3rem;
+  margin: 0 1rem;
+}
+
+main .landing header nav .rightSide a .fa-bars {
+  font-size: 1.6rem;
+}
+
+main .landing header nav #links {
+  display: none;
+  background-color: #d33c2a;
+  color: #fff;
+  width: 100%;
+  text-align: right;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+main .landing header nav #links li {
+  font-size: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+main .landing .present {
+  color: #fff;
+}
+
+main .landing .present .left h1 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  font-weight: lighter;
+}
+
+main .landing .present .left h1 hr {
+  width: 43%;
+  position: relative;
+  top: -0.95rem;
+  left: 14.8rem;
+}
+
+main .landing .present .left p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  padding-right: 5rem;
+  padding-left: 1rem;
+}
+
+main .landing .present .left .iconList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3rem;
+  padding: 0 0.1rem;
+}
+
+main .landing .present .left .iconList li {
+  list-style: none;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0.3rem;
+}
+
+main .landing .present .left .iconList li i {
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+main .illustration {
+  text-align: center;
+}
+
+main .illustration .redText {
+  padding-top: 3rem;
+  background-color: #d33c2a;
+  height: 150px;
+}
+
+main .illustration .redText h1 {
+  background-color: #f5edec;
+  width: 90%;
+  margin: 0 auto;
+  height: 110px;
+  color: #d33c2a;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-top: 1.9rem;
+  font-size: 1.8rem;
+}
+
+main .illustration img {
+  height: 35vh;
+  width: 90%;
+  position: relative;
+}
+
+.nyheter h1 {
+  margin: 3rem 2rem;
+  font-size: 2rem;
+}
+
+.nyheter h1 hr {
+  width: 60%;
+  position: relative;
+  top: -0.65rem;
+  left: 11rem;
+}
+
+.nyheter .newsList li {
+  background-color: #f8f2f2;
+  width: 87%;
+  margin: 1rem auto;
+  list-style: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+}
+
+.nyheter .newsList li .listImg {
+  height: 200px;
+  width: 100%;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}
+
+.nyheter .newsList li .articleBody {
+  margin-top: 1rem;
+}
+
+.nyheter .newsList li .articleDetail {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+}
+
+.nyheter .btnHolder {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.nyheter .btnHolder button {
+  background-color: #d33c2a;
+  color: #fff;
+  border: none;
+  margin: 1rem;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+.calendar .calendarItems li {
+  background-color: #f8f2f2;
+  width: 87%;
+  margin: 1rem auto;
+  list-style: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+}
+
+.calendar .calendarItems li .listImg {
+  height: 200px;
+  width: 100%;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}
+
+.calendar .calendarItems li .redBadge {
+  background-color: #d33c2a;
+  color: #fff;
+  width: 60px;
+  height: 40px;
+  padding: .5rem;
+  position: relative;
+  top: -13rem;
+  left: -2rem;
+}
+
+.calendar .calendarItems li .itemHeader {
+  margin-top: -3rem;
+  margin-bottom: .5rem;
+}
+
+footer {
+  margin-top: 5rem;
+  background-color: #d33c2a;
+}
+
+footer .footerHeader img {
+  margin: .5rem;
+  width: 40px;
+  height: 40px;
+}
+
+footer .footerHeader h1 {
+  position: relative;
+  top: -3.25rem;
+  left: 4rem;
+  color: #fff;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=home.css.map */
