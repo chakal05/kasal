@@ -9,6 +9,15 @@ body {
 	overflow-x: hidden;
 	font-family: 'lobster', cursive;
 }
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
 main {
 	margin-bottom: 4rem;
 	.landing {
@@ -36,8 +45,7 @@ main {
 					}
 
 					a {
-						text-decoration: none;
-						color: #fff;
+						
 						position: relative;
 						top: 0.3rem;
 						margin: 0 1rem;
@@ -68,7 +76,7 @@ main {
 			.left {
 				h1 {
 					font-size: 3rem;
-					margin-top: 2rem;
+					margin-top: 3rem;
 					margin-bottom: 1rem;
 					padding-left: 1rem;
 					font-weight: lighter;
@@ -110,15 +118,14 @@ main {
 
 	.illustration {
 		text-align: center;
-
 		.redText {
 			padding-top: 3rem;
 			background-color: #d33c2a;
-			height: 150px;
+			height: 170px;
 			h1 {
 				background-color: #f5edec;
 				width: 90%;
-				margin: 0 auto;
+				margin: 1rem auto;
 				height: 110px;
 				color: #d33c2a;
 				border-top-left-radius: 1rem;
@@ -139,7 +146,10 @@ main {
 
 .nyheter {
 	h1 {
-		margin: 3rem 2rem;
+        margin-top: -1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 3rem;
 		font-size: 2rem;
 
 		hr {
@@ -185,7 +195,7 @@ main {
 			background-color: #d33c2a;
 			color: #fff;
 			border: none;
-			margin: 1rem;
+			margin: 2rem;
 			border-radius: 0.3rem;
 			font-size: 1.1rem;
 			padding: 1rem;
@@ -194,6 +204,7 @@ main {
 }
 
 .calendar {
+    margin-top: 3rem;
 	.calendarItems {
 		li {
 			background-color: #f8f2f2;
@@ -231,8 +242,11 @@ main {
 footer{
     margin-top: 5rem;
     background-color: #d33c2a;
+    color: #fff;
+    padding-bottom: 1rem;
 
     .footerHeader{
+        
         img{
             margin: .5rem;
             width: 40px;
@@ -243,8 +257,31 @@ footer{
             position: relative;
             top: -3.25rem;
             left: 4rem;
-            color: #fff;
+         
             font-size: 2rem;
+        }
+    }
+
+    .footerTop{
+        margin-top: -3rem;
+        display: flex;
+        justify-content: space-between;
+
+        ul{
+            padding: .5rem;
+
+            li{
+                margin: .5rem;
+            }
+        }
+    }
+
+    .footerIcon{
+        text-align: center;
+
+        i{
+            font-size: 1.3rem;
+            margin: .5rem;
         }
     }
 }
