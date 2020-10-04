@@ -1,0 +1,329 @@
+$primaryColor: #d33c2a;
+$secondaryColor: #fff;
+
+@mixin desktop {
+	@media (min-width: 964px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin Ipad {
+	@media (min-width: 600px) and (max-width: 768px) {
+		@content;
+	}
+}
+
+%sectionTitle {
+	margin-top: -1rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 3rem;
+	color: #2f2e41;
+	font-size: 2rem;
+
+	hr {
+		width: 60%;
+		position: relative;
+		top: -0.65rem;
+		left: 10.3rem;
+	}
+}
+
+%imgItem {
+	height: 200px;
+	width: 100%;
+	border-radius: 0.3rem;
+	margin: 1rem 0;
+}
+
+%listItem {
+	background-color: #f8f2f2;
+	width: 87%;
+	margin: 2rem auto;
+	list-style: none;
+	border-radius: 0.3rem;
+	padding: 1rem 2rem;
+}
+
+%btnHolder {
+	text-align: center;
+	margin: 3rem auto;
+	width: 90%;
+
+	button {
+		background-color: #d33c2a;
+		color: #fff;
+		border: none;
+		margin: 2rem;
+		border-radius: 0.3rem;
+		font-size: 1.1rem;
+		padding: 1rem;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	font-family: 'lobster', cursive;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+main {
+	margin-bottom: 4rem;
+	.landing {
+		background-color: $primaryColor;
+		header {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+
+			.logo {
+				margin: 0.5rem;
+				width: 40px;
+				height: 40px;
+			}
+			nav {
+				.rightSide {
+					margin-top: 1.2rem;
+					margin-right: 0.5rem;
+
+					@include Ipad {
+						margin-top: 1rem;
+					}
+					.search {
+						height: 25px;
+						width: 200px;
+						border: none;
+						border-radius: 15px;
+						padding-left: 1rem;
+
+						@include Ipad {
+							width: 250px;
+							height: 30px;
+						}
+					}
+
+					a {
+						position: relative;
+						top: 0.3rem;
+						margin: 0 1rem;
+						.fa-bars {
+							font-size: 1.6rem;
+						}
+					}
+				}
+				#links {
+					display: none;
+					background-color: #d33c2a;
+					color: #fff;
+					width: 100%;
+					text-align: right;
+					padding-right: 1rem;
+					padding-bottom: 1rem;
+					li {
+						font-size: 1rem;
+						list-style: none;
+						margin-top: 1rem;
+					}
+				}
+			}
+		}
+
+		.present {
+			color: #fff;
+			.left {
+				.title {
+					@extend %sectionTitle;
+					margin: 1rem;
+					color: #fff;
+				}
+
+				p {
+					margin: 1rem 0;
+					font-size: 1.1rem;
+					padding-right: 5rem;
+					padding-left: 1rem;
+
+					@include Ipad {
+						font-size: 1.5rem;
+						padding-right: 9rem;
+					}
+				}
+
+				.iconList {
+					display: flex;
+					justify-content: space-between;
+					margin-top: 3rem;
+					padding: 0 0.1rem;
+					li {
+						list-style: none;
+						font-size: 0.8rem;
+						text-align: center;
+						margin: 0.3rem;
+
+						@include Ipad {
+							font-size: 1rem;
+						}
+
+						i {
+							width: 100%;
+							font-size: 1.4rem;
+							@include Ipad {
+								font-size: 2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.illustration {
+		text-align: center;
+		.redText {
+			padding-top: 3rem;
+			background-color: #d33c2a;
+			height: 170px;
+			h1 {
+				background-color: #f5edec;
+				width: 90%;
+				margin: 1rem auto;
+				height: 106px;
+				color: #d33c2a;
+				border-top-left-radius: 1rem;
+				border-top-right-radius: 1rem;
+				padding: 1rem;
+				font-size: 1.8rem;
+
+				@include Ipad {
+					font-size: 2.3rem;
+					padding: 1.5rem;
+				}
+			}
+		}
+
+		img {
+			@extend %imgItem;
+			height: 32vh;
+		}
+	}
+}
+
+.nyheter {
+	.title {
+		@extend %sectionTitle;
+	}
+	.newsList {
+		@include Ipad {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		li {
+			@extend %listItem;
+			img {
+				@extend %imgItem;
+			}
+
+			.articleBody {
+				margin-top: 1rem;
+			}
+
+			.articleDetail {
+				font-size: 0.8rem;
+				margin: 1rem 0;
+				color: #38100a;
+			}
+		}
+	}
+
+	.btnHolder {
+		@extend %btnHolder;
+	}
+}
+
+.calendar {
+	margin-top: 3rem;
+	.calendarItems {
+		@include Ipad {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		li {
+			@extend %listItem;
+
+			img {
+				@extend %imgItem;
+			}
+
+			.redBadge {
+				background-color: #d33c2a;
+				color: #fff;
+				width: 60px;
+				height: 40px;
+				padding: 0.5rem;
+				position: relative;
+				top: -13rem;
+				left: -2rem;
+			}
+
+			.itemHeader {
+				margin-top: -3rem;
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+
+footer {
+	margin-top: 5rem;
+	background-color: #d33c2a;
+	color: #fff;
+	padding-bottom: 1rem;
+
+	.footerHeader {
+		.logo {
+			margin: 0.5rem;
+			width: 40px;
+			height: 40px;
+		}
+
+		h1 {
+			position: relative;
+			top: -3.25rem;
+			left: 4rem;
+
+			font-size: 2rem;
+		}
+	}
+
+	.footerTop {
+		margin-top: -3rem;
+		display: flex;
+		justify-content: space-between;
+
+		ul {
+			padding: 0.5rem;
+
+			li {
+				list-style: none;
+				margin: 0.5rem;
+			}
+		}
+	}
+
+	.footerIcon {
+		i {
+			font-size: 1.3rem;
+			margin: 0.5rem;
+		}
+	}
+}

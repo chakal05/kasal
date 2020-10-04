@@ -1,3 +1,51 @@
+main .landing .present .left .title, .nyheter .title {
+  margin-top: -1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  color: #2f2e41;
+  font-size: 2rem;
+}
+
+main .landing .present .left .title hr, .nyheter .title hr {
+  width: 60%;
+  position: relative;
+  top: -0.65rem;
+  left: 10.3rem;
+}
+
+main .illustration img, .nyheter .newsList li img, .calendar .calendarItems li img {
+  height: 200px;
+  width: 100%;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}
+
+.nyheter .newsList li, .calendar .calendarItems li {
+  background-color: #f8f2f2;
+  width: 87%;
+  margin: 2rem auto;
+  list-style: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+}
+
+.nyheter .btnHolder {
+  text-align: center;
+  margin: 3rem auto;
+  width: 90%;
+}
+
+.nyheter .btnHolder button {
+  background-color: #d33c2a;
+  color: #fff;
+  border: none;
+  margin: 2rem;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +57,6 @@ html,
 body {
   overflow-x: hidden;
   font-family: 'lobster', cursive;
-}
-
-li {
-  list-style: none;
 }
 
 a {
@@ -41,14 +85,20 @@ main .landing header {
 }
 
 main .landing header .logo {
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.3rem;
-  width: 9%;
+  margin: 0.5rem;
+  width: 40px;
+  height: 40px;
 }
 
 main .landing header nav .rightSide {
   margin-top: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  main .landing header nav .rightSide {
+    margin-top: 1rem;
+  }
 }
 
 main .landing header nav .rightSide .search {
@@ -56,7 +106,14 @@ main .landing header nav .rightSide .search {
   width: 200px;
   border: none;
   border-radius: 15px;
-  text-align: center;
+  padding-left: 1rem;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  main .landing header nav .rightSide .search {
+    width: 250px;
+    height: 30px;
+  }
 }
 
 main .landing header nav .rightSide a {
@@ -89,19 +146,9 @@ main .landing .present {
   color: #fff;
 }
 
-main .landing .present .left h1 {
-  font-size: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  font-weight: lighter;
-}
-
-main .landing .present .left h1 hr {
-  width: 43%;
-  position: relative;
-  top: -0.95rem;
-  left: 14.8rem;
+main .landing .present .left .title {
+  margin: 1rem;
+  color: #fff;
 }
 
 main .landing .present .left p {
@@ -109,6 +156,13 @@ main .landing .present .left p {
   font-size: 1.1rem;
   padding-right: 5rem;
   padding-left: 1rem;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  main .landing .present .left p {
+    font-size: 1.5rem;
+    padding-right: 9rem;
+  }
 }
 
 main .landing .present .left .iconList {
@@ -129,9 +183,21 @@ main .landing .present .left .iconList li {
   margin: 0.3rem;
 }
 
+@media (min-width: 600px) and (max-width: 768px) {
+  main .landing .present .left .iconList li {
+    font-size: 1rem;
+  }
+}
+
 main .landing .present .left .iconList li i {
   width: 100%;
   font-size: 1.4rem;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  main .landing .present .left .iconList li i {
+    font-size: 2rem;
+  }
 }
 
 main .illustration {
@@ -148,49 +214,32 @@ main .illustration .redText h1 {
   background-color: #f5edec;
   width: 90%;
   margin: 1rem auto;
-  height: 110px;
+  height: 106px;
   color: #d33c2a;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  padding-top: 1.9rem;
+  padding: 1rem;
   font-size: 1.8rem;
 }
 
+@media (min-width: 600px) and (max-width: 768px) {
+  main .illustration .redText h1 {
+    font-size: 2.3rem;
+    padding: 1.5rem;
+  }
+}
+
 main .illustration img {
-  height: 35vh;
-  width: 90%;
-  position: relative;
+  height: 32vh;
 }
 
-.nyheter h1 {
-  margin-top: -1rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 3rem;
-  font-size: 2rem;
-}
-
-.nyheter h1 hr {
-  width: 60%;
-  position: relative;
-  top: -0.65rem;
-  left: 11rem;
-}
-
-.nyheter .newsList li {
-  background-color: #f8f2f2;
-  width: 87%;
-  margin: 1rem auto;
-  list-style: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
-}
-
-.nyheter .newsList li .listImg {
-  height: 200px;
-  width: 100%;
-  border-radius: 0.3rem;
-  margin: 1rem 0;
+@media (min-width: 600px) and (max-width: 768px) {
+  .nyheter .newsList {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 .nyheter .newsList li .articleBody {
@@ -200,42 +249,20 @@ main .illustration img {
 .nyheter .newsList li .articleDetail {
   font-size: 0.8rem;
   margin: 1rem 0;
-}
-
-.nyheter .btnHolder {
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-}
-
-.nyheter .btnHolder button {
-  background-color: #d33c2a;
-  color: #fff;
-  border: none;
-  margin: 2rem;
-  border-radius: 0.3rem;
-  font-size: 1.1rem;
-  padding: 1rem;
+  color: #38100a;
 }
 
 .calendar {
   margin-top: 3rem;
 }
 
-.calendar .calendarItems li {
-  background-color: #f8f2f2;
-  width: 87%;
-  margin: 1rem auto;
-  list-style: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
-}
-
-.calendar .calendarItems li .listImg {
-  height: 200px;
-  width: 100%;
-  border-radius: 0.3rem;
-  margin: 1rem 0;
+@media (min-width: 600px) and (max-width: 768px) {
+  .calendar .calendarItems {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
 .calendar .calendarItems li .redBadge {
@@ -243,7 +270,7 @@ main .illustration img {
   color: #fff;
   width: 60px;
   height: 40px;
-  padding: .5rem;
+  padding: 0.5rem;
   position: relative;
   top: -13rem;
   left: -2rem;
@@ -251,7 +278,7 @@ main .illustration img {
 
 .calendar .calendarItems li .itemHeader {
   margin-top: -3rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 footer {
@@ -261,8 +288,8 @@ footer {
   padding-bottom: 1rem;
 }
 
-footer .footerHeader img {
-  margin: .5rem;
+footer .footerHeader .logo {
+  margin: 0.5rem;
   width: 40px;
   height: 40px;
 }
@@ -285,19 +312,16 @@ footer .footerTop {
 }
 
 footer .footerTop ul {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 footer .footerTop ul li {
-  margin: .5rem;
-}
-
-footer .footerIcon {
-  text-align: center;
+  list-style: none;
+  margin: 0.5rem;
 }
 
 footer .footerIcon i {
   font-size: 1.3rem;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 /*# sourceMappingURL=home.css.map */
