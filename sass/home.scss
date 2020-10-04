@@ -1,14 +1,24 @@
 $primaryColor: #d33c2a;
 $secondaryColor: #fff;
 
-@mixin desktop {
-	@media (min-width: 964px) and (max-width: 1024px) {
+@mixin extraLarge {
+	@media (min-width: 1920px) {
+		@content;
+	}
+}
+@mixin large {
+	@media (min-width: 1280px) and (max-width: 1919px) {
+		@content;
+	}
+}
+@mixin medium {
+	@media (min-width: 960px) and (max-width: 1279px) {
 		@content;
 	}
 }
 
-@mixin Ipad {
-	@media (min-width: 600px) and (max-width: 768px) {
+@mixin small {
+	@media (min-width: 600px) and (max-width: 959px) {
 		@content;
 	}
 }
@@ -19,6 +29,7 @@ $secondaryColor: #fff;
 	margin-right: 2rem;
 	margin-bottom: 3rem;
 	color: #2f2e41;
+	font-weight: lighter;
 	font-size: 2rem;
 
 	hr {
@@ -26,6 +37,10 @@ $secondaryColor: #fff;
 		position: relative;
 		top: -0.65rem;
 		left: 10.3rem;
+
+		@include small {
+			width: 75%;
+		}
 	}
 }
 
@@ -43,6 +58,10 @@ $secondaryColor: #fff;
 	list-style: none;
 	border-radius: 0.3rem;
 	padding: 1rem 2rem;
+
+	@include small {
+		width: 80%;
+	}
 }
 
 %btnHolder {
@@ -96,7 +115,7 @@ main {
 					margin-top: 1.2rem;
 					margin-right: 0.5rem;
 
-					@include Ipad {
+					@include small {
 						margin-top: 1rem;
 					}
 					.search {
@@ -106,7 +125,7 @@ main {
 						border-radius: 15px;
 						padding-left: 1rem;
 
-						@include Ipad {
+						@include small {
 							width: 250px;
 							height: 30px;
 						}
@@ -144,40 +163,56 @@ main {
 				.title {
 					@extend %sectionTitle;
 					margin: 1rem;
+					margin-bottom: 0.5rem;
 					color: #fff;
+					font-size: 3.5rem;
+
+					hr {
+						width: 35%;
+						position: relative;
+						top: -1rem;
+						left: 17.3rem;
+
+						@include small {
+							width: 65%;
+							padding-right: 3rem;
+						}
+					}
 				}
 
 				p {
-					margin: 1rem 0;
+					margin-top: 1rem;
 					font-size: 1.1rem;
-					padding-right: 5rem;
-					padding-left: 1rem;
+					padding-right: 2rem;
+					padding-left: 5rem;
+					text-align: right;
 
-					@include Ipad {
-						font-size: 1.5rem;
-						padding-right: 9rem;
+					@include small {
+						margin: 0 auto;
+						font-size: 1.3rem;
+                        padding-left: 11rem;
+                        margin-top: 2rem;
 					}
 				}
 
 				.iconList {
 					display: flex;
 					justify-content: space-between;
-					margin-top: 3rem;
-					padding: 0 0.1rem;
+					margin-top: 4rem;
 					li {
 						list-style: none;
 						font-size: 0.8rem;
 						text-align: center;
 						margin: 0.3rem;
 
-						@include Ipad {
+						@include small {
 							font-size: 1rem;
 						}
 
 						i {
 							width: 100%;
 							font-size: 1.4rem;
-							@include Ipad {
+							@include small {
 								font-size: 2rem;
 							}
 						}
@@ -195,16 +230,17 @@ main {
 			height: 170px;
 			h1 {
 				background-color: #f5edec;
-				width: 90%;
+				width: 85%;
 				margin: 1rem auto;
 				height: 106px;
 				color: #d33c2a;
 				border-top-left-radius: 1rem;
 				border-top-right-radius: 1rem;
-				padding: 1rem;
+                padding: 1rem;
+                padding-top: 2rem;
 				font-size: 1.8rem;
 
-				@include Ipad {
+				@include small {
 					font-size: 2.3rem;
 					padding: 1.5rem;
 				}
@@ -214,6 +250,7 @@ main {
 		img {
 			@extend %imgItem;
 			height: 32vh;
+			width: 500px;
 		}
 	}
 }
@@ -223,7 +260,7 @@ main {
 		@extend %sectionTitle;
 	}
 	.newsList {
-		@include Ipad {
+		@include small {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
@@ -253,7 +290,7 @@ main {
 .calendar {
 	margin-top: 3rem;
 	.calendarItems {
-		@include Ipad {
+		@include small {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
@@ -287,7 +324,7 @@ footer {
 	margin-top: 5rem;
 	background-color: #d33c2a;
 	color: #fff;
-	padding-bottom: 1rem;
+	padding: 1rem;
 
 	.footerHeader {
 		.logo {
