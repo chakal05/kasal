@@ -11,8 +11,9 @@ $secondaryColor: #fff;
 		@content;
 	}
 }
+//and (max-width: 1279px)
 @mixin medium {
-	@media (min-width: 960px) and (max-width: 1279px) {
+	@media (min-width: 960px) {
 		@content;
 	}
 }
@@ -98,228 +99,313 @@ a {
 }
 main {
 	margin-bottom: 4rem;
-	.landing {
+
+	@include medium {
 		background-color: $primaryColor;
-		header {
-			display: flex;
-			align-items: flex-start;
-			justify-content: space-between;
-
-			.logo {
-				margin: 0.5rem;
-				width: 40px;
-				height: 40px;
-			}
-			nav {
-				.rightSide {
-					margin-top: 1.2rem;
-					margin-right: 0.5rem;
-
-					@include small {
-						margin-top: 1rem;
-					}
-					.search {
-						height: 25px;
-						width: 200px;
-						border: none;
-						border-radius: 15px;
-						padding-left: 1rem;
-
-						@include small {
-							width: 250px;
-							height: 30px;
-						}
-					}
-
-					a {
-						position: relative;
-						top: 0.3rem;
-						margin: 0 1rem;
-						.fa-bars {
-							font-size: 1.6rem;
-						}
-					}
-				}
-				#links {
-					display: none;
-					background-color: #d33c2a;
-					color: #fff;
-					width: 100%;
-					text-align: right;
-					padding-right: 1rem;
-					padding-bottom: 1rem;
-					li {
-						font-size: 1rem;
-						list-style: none;
-						margin-top: 1rem;
-					}
-				}
-			}
-		}
-
-		.present {
-			color: #fff;
-			.left {
-				.title {
-					@extend %sectionTitle;
-					margin: 1rem;
-					margin-bottom: 0.5rem;
-					color: #fff;
-					font-size: 3.5rem;
-
-					hr {
-						width: 35%;
-						position: relative;
-						top: -1rem;
-						left: 17.3rem;
-
-						@include small {
-							width: 65%;
-							padding-right: 3rem;
-						}
-					}
-				}
-
-				p {
-					margin-top: 1rem;
-					font-size: 1.1rem;
-					padding-right: 2rem;
-					padding-left: 5rem;
-					text-align: right;
-
-					@include small {
-						margin: 0 auto;
-						font-size: 1.3rem;
-                        padding-left: 11rem;
-                        margin-top: 2rem;
-					}
-				}
-
-				.iconList {
-					display: flex;
-					justify-content: space-between;
-					margin-top: 4rem;
-					li {
-						list-style: none;
-						font-size: 0.8rem;
-						text-align: center;
-						margin: 0.3rem;
-
-						@include small {
-							font-size: 1rem;
-						}
-
-						i {
-							width: 100%;
-							font-size: 1.4rem;
-							@include small {
-								font-size: 2rem;
-							}
-						}
-					}
-				}
-			}
-		}
+		height: 70vh;
+		margin-bottom: 3rem;
 	}
 
-	.illustration {
-		text-align: center;
-		.redText {
-			padding-top: 3rem;
-			background-color: #d33c2a;
-			height: 170px;
-			h1 {
-				background-color: #f5edec;
-				width: 85%;
-				margin: 1rem auto;
-				height: 106px;
-				color: #d33c2a;
-				border-top-left-radius: 1rem;
-				border-top-right-radius: 1rem;
-                padding: 1rem;
-                padding-top: 2rem;
-				font-size: 1.8rem;
+	header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		background-color: #d33c2a;
+		margin-bottom: -1rem;
+		@include medium {
+			max-width: 960px;
+			margin: 0 auto;
+			margin-bottom: -0.1rem;
+			height: 100px;
+		}
+
+		.logo {
+			margin: 0.5rem;
+			width: 40px;
+			height: 40px;
+
+			@include medium {
+				width: 50px;
+				height: 50px;
+			}
+		}
+		nav {
+			.rightSide {
+				margin-top: 1.2rem;
+				margin-right: 0.5rem;
 
 				@include small {
-					font-size: 2.3rem;
-					padding: 1.5rem;
+					margin-top: 1rem;
+				}
+
+				@include medium {
+					margin-top: 1.5rem;
+				}
+				.search {
+					height: 25px;
+					width: 200px;
+					border: none;
+					border-radius: 15px;
+					padding-left: 1rem;
+
+					@include small {
+						width: 250px;
+						height: 30px;
+					}
+
+					@include medium {
+						width: 300px;
+						height: 50;
+					}
+				}
+
+				a {
+					position: relative;
+					top: 0.3rem;
+					margin: 0 1rem;
+					.fa-bars {
+						font-size: 1.6rem;
+					}
+				}
+			}
+			#links {
+				display: none;
+				background-color: #d33c2a;
+				color: #fff;
+				width: 100%;
+				text-align: right;
+				padding-right: 1rem;
+				padding-bottom: 1rem;
+				li {
+					font-size: 1rem;
+					list-style: none;
+					margin-top: 1rem;
+				}
+			}
+		}
+	}
+
+	.landing {
+		@include medium {
+			max-width: 960px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.left {
+			background-color: $primaryColor;
+			color: #fff;
+
+			@include medium {
+				margin-top: 10%;
+			}
+
+			.title {
+				@extend %sectionTitle;
+				margin: 1rem;
+				margin-bottom: 0.5rem;
+				color: #fff;
+				font-size: 3.5rem;
+
+				hr {
+					width: 35%;
+					position: relative;
+					top: -1rem;
+					left: 17.3rem;
+
+					@include small {
+						width: 65%;
+						padding-right: 3rem;
+					}
+				}
+			}
+
+			p {
+				margin-top: 1rem;
+				font-size: 1.1rem;
+				padding-right: 2rem;
+				padding-left: 5rem;
+				text-align: right;
+
+				@include small {
+					padding-left: 50%;
+					font-size: 1.3rem;
+					margin-top: 1rem;
+				}
+
+				@include medium {
+					font-size: 1.3rem;
+				}
+			}
+
+			.iconList {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 4rem;
+
+				@include small {
+					margin-top: 3rem;
+				}
+				li {
+					list-style: none;
+					font-size: 0.8rem;
+					text-align: center;
+					margin: 0.3rem;
+
+					@include small {
+						font-size: 1rem;
+					}
+
+					@include medium {
+						font-size: 1.1rem;
+					}
+
+					i {
+						width: 100%;
+						font-size: 1.4rem;
+						@include small {
+							font-size: 2rem;
+						}
+					}
 				}
 			}
 		}
 
-		img {
-			@extend %imgItem;
-			height: 32vh;
-			width: 500px;
-		}
-	}
-}
+		.illustration {
+			text-align: center;
+			@include medium {
+				margin-top: 10%;
+			}
+			.redText {
+				padding-top: 3rem;
+				height: 170px;
+				background-color: $primaryColor;
+				@include medium {
+					display: none;
+				}
+				h1 {
+					background-color: #f5edec;
+					width: 85%;
+					margin: 1rem auto;
+					height: 106px;
+					color: #d33c2a;
+					border-top-left-radius: 1rem;
+					border-top-right-radius: 1rem;
+					padding: 1rem;
+					padding-top: 2rem;
+					font-size: 1.8rem;
 
-.nyheter {
-	.title {
-		@extend %sectionTitle;
-	}
-	.newsList {
-		@include small {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-		}
-		li {
-			@extend %listItem;
-			img {
-				@extend %imgItem;
+					@include small {
+						font-size: 2rem;
+						padding: 1.5rem;
+					}
+				}
 			}
 
-			.articleBody {
-				margin-top: 1rem;
-			}
+			.img {
+				background-color: $primaryColor;
+				@include medium {
+					margin-top: 5%;
+				}
+				img {
+					@extend %imgItem;
+					height: 32vh;
+					width: 500px;
 
-			.articleDetail {
-				font-size: 0.8rem;
-				margin: 1rem 0;
-				color: #38100a;
-			}
-		}
-	}
-
-	.btnHolder {
-		@extend %btnHolder;
-	}
-}
-
-.calendar {
-	margin-top: 3rem;
-	.calendarItems {
-		@include small {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-		}
-		li {
-			@extend %listItem;
-
-			img {
-				@extend %imgItem;
-			}
-
-			.redBadge {
-				background-color: #d33c2a;
-				color: #fff;
-				width: 60px;
-				height: 40px;
-				padding: 0.5rem;
-				position: relative;
-				top: -13rem;
-				left: -2rem;
-			}
-
-			.itemHeader {
-				margin-top: -3rem;
-				margin-bottom: 0.5rem;
+					@include medium {
+						width: 80%;
+						height: 350px;
+						border-radius: 2rem;
+					}
+				}
 			}
 		}
 	}
 }
+.mainContent {
+	@include medium {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		max-width: 960px;
+		margin: 0 auto;
+	}
 
+	.nyheter {
+		@include medium {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+		.title {
+			@extend %sectionTitle;
+		}
+		.newsList {
+			@include small {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			li {
+				@extend %listItem;
+				img {
+					@extend %imgItem;
+				}
+
+				.articleBody {
+					margin-top: 1rem;
+				}
+
+				.articleDetail {
+					font-size: 0.8rem;
+					margin: 1rem 0;
+					color: #38100a;
+				}
+			}
+		}
+
+		.btnHolder {
+			@extend %btnHolder;
+		}
+	}
+
+	.calendar {
+		margin-top: 3rem;
+		@include medium {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+		.calendarItems {
+			@include small {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			li {
+				@extend %listItem;
+
+				img {
+					@extend %imgItem;
+				}
+
+				.redBadge {
+					background-color: #d33c2a;
+					color: #fff;
+					width: 60px;
+					height: 40px;
+					padding: 0.5rem;
+					position: relative;
+					top: -13rem;
+					left: -2rem;
+				}
+
+				.itemHeader {
+					margin-top: -3rem;
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+	}
+}
 footer {
 	margin-top: 5rem;
 	background-color: #d33c2a;
@@ -327,6 +413,10 @@ footer {
 	padding: 1rem;
 
 	.footerHeader {
+		@include medium {
+			max-width: 960px;
+			margin: 0 auto;
+		}
 		.logo {
 			margin: 0.5rem;
 			width: 40px;
