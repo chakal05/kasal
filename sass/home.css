@@ -1,35 +1,42 @@
-main .landing .left .title, .mainContent .nyheter .title {
+main .landing .redLeft .title, .content .mainContent .nyheter .title {
   margin-top: -1rem;
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 3rem;
   color: #2f2e41;
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 2.1rem;
+  padding-top: 1rem;
 }
 
-main .landing .left .title hr, .mainContent .nyheter .title hr {
+main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
   width: 60%;
   position: relative;
   top: -0.65rem;
-  left: 10.3rem;
+  left: 9rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left .title hr, .mainContent .nyheter .title hr {
+  main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
     width: 75%;
   }
 }
 
-main .landing .illustration .img img, .mainContent .nyheter .newsList li img, .mainContent .calendar .calendarItems li img {
+@media (min-width: 960px) {
+  main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
+    display: none;
+  }
+}
+
+main .landing .illustration .img img, .content .mainContent .nyheter .newsList li img, .content .mainContent .calendar .calendarItems li img {
   height: 200px;
   width: 100%;
   border-radius: 0.3rem;
   margin: 1rem 0;
 }
 
-.mainContent .nyheter .newsList li, .mainContent .calendar .calendarItems li {
-  background-color: #f8f2f2;
+.content .mainContent .nyheter .newsList li, .content .mainContent .calendar .calendarItems li {
+  background-color: #fff;
   width: 87%;
   margin: 2rem auto;
   list-style: none;
@@ -38,18 +45,26 @@ main .landing .illustration .img img, .mainContent .nyheter .newsList li img, .m
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  .mainContent .nyheter .newsList li, .mainContent .calendar .calendarItems li {
+  .content .mainContent .nyheter .newsList li, .content .mainContent .calendar .calendarItems li {
     width: 80%;
   }
 }
 
-.mainContent .nyheter .btnHolder {
+@media (min-width: 960px) {
+  .content .mainContent .nyheter .newsList li, .content .mainContent .calendar .calendarItems li {
+    width: 95%;
+    height: 380px;
+    margin: 1rem auto;
+  }
+}
+
+.content .mainContent .nyheter .btnHolder {
   text-align: center;
   margin: 3rem auto;
   width: 90%;
 }
 
-.mainContent .nyheter .btnHolder button {
+.content .mainContent .nyheter .btnHolder button {
   background-color: #d33c2a;
   color: #fff;
   border: none;
@@ -69,12 +84,16 @@ main .landing .illustration .img img, .mainContent .nyheter .newsList li img, .m
 html,
 body {
   overflow-x: hidden;
-  font-family: 'lobster', cursive;
+  font-family: 'Piazzolla', serif;
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+}
+
+a:hover {
+  font-weight: bold;
+  font-size: 110%;
 }
 
 main {
@@ -84,8 +103,8 @@ main {
 @media (min-width: 960px) {
   main {
     background-color: #d33c2a;
-    height: 70vh;
-    margin-bottom: 3rem;
+    height: 88vh;
+    margin-bottom: 0;
   }
 }
 
@@ -105,7 +124,7 @@ main header {
 
 @media (min-width: 960px) {
   main header {
-    max-width: 960px;
+    max-width: 1024px;
     margin: 0 auto;
     margin-bottom: -0.1rem;
     height: 100px;
@@ -125,24 +144,24 @@ main header .logo {
   }
 }
 
-main header nav .rightSide {
+main header nav .rightNav {
   margin-top: 1.2rem;
   margin-right: 0.5rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main header nav .rightSide {
+  main header nav .rightNav {
     margin-top: 1rem;
   }
 }
 
 @media (min-width: 960px) {
-  main header nav .rightSide {
-    margin-top: 1.5rem;
+  main header nav .rightNav {
+    margin-top: 1.3rem;
   }
 }
 
-main header nav .rightSide .search {
+main header nav .rightNav .search {
   height: 25px;
   width: 200px;
   border: none;
@@ -151,26 +170,26 @@ main header nav .rightSide .search {
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main header nav .rightSide .search {
+  main header nav .rightNav .search {
     width: 250px;
     height: 30px;
   }
 }
 
 @media (min-width: 960px) {
-  main header nav .rightSide .search {
+  main header nav .rightNav .search {
     width: 300px;
-    height: 50;
+    height: 30px;
   }
 }
 
-main header nav .rightSide a {
+main header nav .rightNav a {
   position: relative;
   top: 0.3rem;
   margin: 0 1rem;
 }
 
-main header nav .rightSide a .fa-bars {
+main header nav .rightNav a .fa-bars {
   font-size: 1.6rem;
 }
 
@@ -192,8 +211,9 @@ main header nav #links li {
 
 @media (min-width: 960px) {
   main .landing {
-    max-width: 960px;
+    max-width: 1024px;
     margin: 0 auto;
+    margin-top: 1rem;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -201,61 +221,62 @@ main header nav #links li {
   }
 }
 
-main .landing .left {
+main .landing .redLeft {
   background-color: #d33c2a;
   color: #fff;
 }
 
-@media (min-width: 960px) {
-  main .landing .left {
-    margin-top: 10%;
-  }
-}
-
-main .landing .left .title {
+main .landing .redLeft .title {
   margin: 1rem;
   margin-bottom: 0.5rem;
   color: #fff;
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 
-main .landing .left .title hr {
+@media (min-width: 960px) {
+  main .landing .redLeft .title {
+    margin: 2rem;
+    font-size: 5rem;
+  }
+}
+
+main .landing .redLeft .title hr {
   width: 35%;
   position: relative;
   top: -1rem;
-  left: 17.3rem;
+  left: 16.7rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left .title hr {
+  main .landing .redLeft .title hr {
     width: 65%;
     padding-right: 3rem;
   }
 }
 
-main .landing .left p {
+main .landing .redLeft p {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   padding-right: 2rem;
   padding-left: 5rem;
   text-align: right;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left p {
-    padding-left: 50%;
-    font-size: 1.3rem;
+  main .landing .redLeft p {
+    padding-left: 30%;
+    font-size: 1.5rem;
     margin-top: 1rem;
   }
 }
 
 @media (min-width: 960px) {
-  main .landing .left p {
-    font-size: 1.3rem;
+  main .landing .redLeft p {
+    font-size: 1.8rem;
   }
 }
 
-main .landing .left .iconList {
+main .landing .redLeft .iconList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,38 +287,45 @@ main .landing .left .iconList {
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left .iconList {
+  main .landing .redLeft .iconList {
     margin-top: 3rem;
   }
 }
 
-main .landing .left .iconList li {
+main .landing .redLeft .iconList li {
   list-style: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
   margin: 0.3rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left .iconList li {
+  main .landing .redLeft .iconList li {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 960px) {
-  main .landing .left .iconList li {
-    font-size: 1.1rem;
+  main .landing .redLeft .iconList li {
+    margin-top: 2rem;
+    font-size: 1.3rem;
   }
 }
 
-main .landing .left .iconList li i {
+main .landing .redLeft .iconList li i {
   width: 100%;
   font-size: 1.4rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  main .landing .left .iconList li i {
+  main .landing .redLeft .iconList li i {
     font-size: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  main .landing .redLeft .iconList li i {
+    font-size: 2.1rem;
   }
 }
 
@@ -307,7 +335,7 @@ main .landing .illustration {
 
 @media (min-width: 960px) {
   main .landing .illustration {
-    margin-top: 10%;
+    padding: 1rem;
   }
 }
 
@@ -333,7 +361,7 @@ main .landing .illustration .redText h1 {
   border-top-right-radius: 1rem;
   padding: 1rem;
   padding-top: 2rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -343,49 +371,50 @@ main .landing .illustration .redText h1 {
   }
 }
 
-main .landing .illustration .img {
-  background-color: #d33c2a;
-}
-
-@media (min-width: 960px) {
-  main .landing .illustration .img {
-    margin-top: 5%;
-  }
-}
-
 main .landing .illustration .img img {
   height: 32vh;
-  width: 500px;
+  width: 430px;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 960px) {
   main .landing .illustration .img img {
-    width: 80%;
-    height: 350px;
-    border-radius: 2rem;
+    width: 90%;
+    margin-top: 5rem;
+    width: 400px;
+    height: 35vh;
   }
 }
 
+.content {
+  background-color: #f6f8fa;
+  padding-bottom: 10px;
+}
+
 @media (min-width: 960px) {
-  .mainContent {
+  .content .mainContent {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
-    max-width: 960px;
+    max-width: 1024px;
     margin: 0 auto;
+    padding-top: 3rem;
   }
 }
 
+.content .mainContent .nyheter .title {
+  padding-top: 2rem;
+}
+
 @media (min-width: 960px) {
-  .mainContent .nyheter {
-    max-width: 960px;
-    margin: 0 auto;
+  .content .mainContent .nyheter .title {
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  .mainContent .nyheter .newsList {
+  .content .mainContent .nyheter .newsList {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -393,29 +422,44 @@ main .landing .illustration .img img {
   }
 }
 
-.mainContent .nyheter .newsList li .articleBody {
-  margin-top: 1rem;
+@media (min-width: 960px) {
+  .content .mainContent .nyheter .newsList li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 3rem;
+  }
 }
 
-.mainContent .nyheter .newsList li .articleDetail {
-  font-size: 0.8rem;
+.content .mainContent .nyheter .newsList li .articleContent .articleHeader {
+  font-size: 1.5rem;
+}
+
+.content .mainContent .nyheter .newsList li .articleContent .articleBody {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.content .mainContent .nyheter .newsList li .articleContent .articleDetail {
+  font-size: 0.9rem;
   margin: 1rem 0;
   color: #38100a;
 }
 
-.mainContent .calendar {
-  margin-top: 3rem;
+@media (min-width: 960px) {
+  .content .mainContent .nyheter .newsList li .articleContent {
+    margin: 1rem;
+  }
 }
 
 @media (min-width: 960px) {
-  .mainContent .calendar {
-    max-width: 960px;
-    margin: 0 auto;
+  .content .mainContent .nyheter .newsList li img {
+    width: 30%;
   }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  .mainContent .calendar .calendarItems {
+  .content .mainContent .calendar .calendarItems {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -423,7 +467,7 @@ main .landing .illustration .img img {
   }
 }
 
-.mainContent .calendar .calendarItems li .redBadge {
+.content .mainContent .calendar .calendarItems li .redBadge {
   background-color: #d33c2a;
   color: #fff;
   width: 60px;
@@ -434,39 +478,42 @@ main .landing .illustration .img img {
   left: -2rem;
 }
 
-.mainContent .calendar .calendarItems li .itemHeader {
+.content .mainContent .calendar .calendarItems li .itemHeader {
   margin-top: -3rem;
   margin-bottom: 0.5rem;
 }
 
 footer {
-  margin-top: 5rem;
   background-color: #d33c2a;
   color: #fff;
   padding: 1rem;
 }
 
+footer a {
+  color: #fff;
+}
+
 @media (min-width: 960px) {
-  footer .footerHeader {
-    max-width: 960px;
+  footer .footerContent {
+    max-width: 1024px;
     margin: 0 auto;
   }
 }
 
-footer .footerHeader .logo {
+footer .footerContent .footerHeader .logo {
   margin: 0.5rem;
   width: 40px;
   height: 40px;
 }
 
-footer .footerHeader h1 {
+footer .footerContent .footerHeader h1 {
   position: relative;
   top: -3.25rem;
   left: 4rem;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
-footer .footerTop {
+footer .footerContent .footerTop {
   margin-top: -3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,17 +523,23 @@ footer .footerTop {
           justify-content: space-between;
 }
 
-footer .footerTop ul {
+footer .footerContent .footerTop ul {
   padding: 0.5rem;
 }
 
-footer .footerTop ul li {
+footer .footerContent .footerTop ul li {
   list-style: none;
   margin: 0.5rem;
+  font-size: 1.1rem;
 }
 
-footer .footerIcon i {
-  font-size: 1.3rem;
+@media (min-width: 960px) {
+  footer .footerContent .footerTop ul li {
+    font-size: 1.2rem;
+  }
+}
+
+footer .footerContent .footerTop .footerIcon i {
   margin: 0.5rem;
 }
 /*# sourceMappingURL=home.css.map */

@@ -31,16 +31,21 @@ $secondaryColor: #fff;
 	margin-bottom: 3rem;
 	color: #2f2e41;
 	font-weight: lighter;
-	font-size: 2rem;
+	font-size: 2.1rem;
+	padding-top: 1rem;
 
 	hr {
 		width: 60%;
 		position: relative;
 		top: -0.65rem;
-		left: 10.3rem;
+		left: 9rem;
 
 		@include small {
 			width: 75%;
+		}
+
+		@include medium {
+			display: none;
 		}
 	}
 }
@@ -52,8 +57,9 @@ $secondaryColor: #fff;
 	margin: 1rem 0;
 }
 
+//#f8f2f2
 %listItem {
-	background-color: #f8f2f2;
+	background-color: #fff;
 	width: 87%;
 	margin: 2rem auto;
 	list-style: none;
@@ -62,6 +68,12 @@ $secondaryColor: #fff;
 
 	@include small {
 		width: 80%;
+	}
+
+	@include medium {
+		width: 95%;
+		height: 380px;
+		margin: 1rem auto;
 	}
 }
 
@@ -90,20 +102,24 @@ $secondaryColor: #fff;
 html,
 body {
 	overflow-x: hidden;
-	font-family: 'lobster', cursive;
+	font-family: 'Piazzolla', serif;
 }
 
 a {
 	text-decoration: none;
-	color: #fff;
+}
+
+a:hover {
+	font-weight: bold;
+	font-size: 110%;
 }
 main {
 	margin-bottom: 4rem;
 
 	@include medium {
 		background-color: $primaryColor;
-		height: 70vh;
-		margin-bottom: 3rem;
+		height: 88vh;
+		margin-bottom: 0;
 	}
 
 	header {
@@ -113,7 +129,7 @@ main {
 		background-color: #d33c2a;
 		margin-bottom: -1rem;
 		@include medium {
-			max-width: 960px;
+			max-width: 1024px;
 			margin: 0 auto;
 			margin-bottom: -0.1rem;
 			height: 100px;
@@ -130,7 +146,7 @@ main {
 			}
 		}
 		nav {
-			.rightSide {
+			.rightNav {
 				margin-top: 1.2rem;
 				margin-right: 0.5rem;
 
@@ -139,7 +155,7 @@ main {
 				}
 
 				@include medium {
-					margin-top: 1.5rem;
+					margin-top: 1.3rem;
 				}
 				.search {
 					height: 25px;
@@ -155,7 +171,7 @@ main {
 
 					@include medium {
 						width: 300px;
-						height: 50;
+						height: 30px;
 					}
 				}
 
@@ -187,32 +203,37 @@ main {
 
 	.landing {
 		@include medium {
-			max-width: 960px;
+			max-width: 1024px;
 			margin: 0 auto;
+			margin-top: 1rem;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
 
-		.left {
+		.redLeft {
 			background-color: $primaryColor;
 			color: #fff;
-
-			@include medium {
-				margin-top: 10%;
-			}
 
 			.title {
 				@extend %sectionTitle;
 				margin: 1rem;
 				margin-bottom: 0.5rem;
-				color: #fff;
-				font-size: 3.5rem;
+				color: $secondaryColor;
+				font-size: 4rem;
+
+				@include medium {
+					margin: 2rem;
+					font-size: 5rem;
+                }
+                
+             
 
 				hr {
 					width: 35%;
 					position: relative;
 					top: -1rem;
-					left: 17.3rem;
+                    left: 16.7rem;
+                    
 
 					@include small {
 						width: 65%;
@@ -223,19 +244,19 @@ main {
 
 			p {
 				margin-top: 1rem;
-				font-size: 1.1rem;
+				font-size: 1.5rem;
 				padding-right: 2rem;
 				padding-left: 5rem;
 				text-align: right;
 
 				@include small {
-					padding-left: 50%;
-					font-size: 1.3rem;
+					padding-left: 30%;
+					font-size: 1.5rem;
 					margin-top: 1rem;
 				}
 
 				@include medium {
-					font-size: 1.3rem;
+					font-size: 1.8rem;
 				}
 			}
 
@@ -249,7 +270,7 @@ main {
 				}
 				li {
 					list-style: none;
-					font-size: 0.8rem;
+					font-size: 1rem;
 					text-align: center;
 					margin: 0.3rem;
 
@@ -258,7 +279,8 @@ main {
 					}
 
 					@include medium {
-						font-size: 1.1rem;
+                        margin-top: 2rem;
+						font-size: 1.3rem;
 					}
 
 					i {
@@ -266,7 +288,11 @@ main {
 						font-size: 1.4rem;
 						@include small {
 							font-size: 2rem;
-						}
+                        }
+                        
+                        @include medium{
+                            font-size: 2.1rem;
+                        }
 					}
 				}
 			}
@@ -275,8 +301,9 @@ main {
 		.illustration {
 			text-align: center;
 			@include medium {
-				margin-top: 10%;
+				padding: 1rem;
 			}
+
 			.redText {
 				padding-top: 3rem;
 				height: 170px;
@@ -294,7 +321,7 @@ main {
 					border-top-right-radius: 1rem;
 					padding: 1rem;
 					padding-top: 2rem;
-					font-size: 1.8rem;
+					font-size: 2rem;
 
 					@include small {
 						font-size: 2rem;
@@ -304,153 +331,177 @@ main {
 			}
 
 			.img {
-				background-color: $primaryColor;
-				@include medium {
-					margin-top: 5%;
-				}
 				img {
 					@extend %imgItem;
 					height: 32vh;
-					width: 500px;
-
+					width: 430px;
+					margin-top: 0.5rem;
 					@include medium {
-						width: 80%;
-						height: 350px;
-						border-radius: 2rem;
+						width: 90%;
+                        margin-top: 5rem;
+                        width: 400px;
+                        height: 35vh;
 					}
 				}
 			}
 		}
 	}
 }
-.mainContent {
-	@include medium {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		max-width: 960px;
-		margin: 0 auto;
-	}
-
-	.nyheter {
+.content {
+	background-color: #f6f8fa;
+	padding-bottom: 10px;
+	.mainContent {
 		@include medium {
-			max-width: 960px;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			max-width: 1024px;
 			margin: 0 auto;
+			padding-top: 3rem;
 		}
-		.title {
-			@extend %sectionTitle;
-		}
-		.newsList {
-			@include small {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-			}
 
-			li {
-				@extend %listItem;
-				img {
-					@extend %imgItem;
-				}
-
-				.articleBody {
-					margin-top: 1rem;
-				}
-
-				.articleDetail {
-					font-size: 0.8rem;
-					margin: 1rem 0;
-					color: #38100a;
+		.nyheter {
+			.title {
+				@extend %sectionTitle;
+				padding-top: 2rem;
+				@include medium {
+					font-size: 2rem;
 				}
 			}
-		}
+			.newsList {
+				@include small {
+					display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
 
-		.btnHolder {
-			@extend %btnHolder;
-		}
-	}
+				li {
+					@extend %listItem;
+					@include medium {
+						display: flex;
+						padding: 3rem;
+                        
+                    }
 
-	.calendar {
-		margin-top: 3rem;
-		@include medium {
-			max-width: 960px;
-			margin: 0 auto;
-		}
-		.calendarItems {
-			@include small {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
+					.articleContent {
+						.articleHeader {
+							font-size: 1.5rem;
+						}
+						.articleBody {
+							margin-top: 1rem;
+							font-size: 1.1rem;
+						}
+
+						.articleDetail {
+							font-size: 0.9rem;
+							margin: 1rem 0;
+							color: #38100a;
+						}
+
+						@include medium {
+							margin: 1rem;
+						}
+					}
+					img {
+						@extend %imgItem;
+
+						@include medium {
+							width: 30%;
+						}
+					}
+				}
 			}
 
-			li {
-				@extend %listItem;
+			.btnHolder {
+				@extend %btnHolder;
+			}
+		}
 
-				img {
-					@extend %imgItem;
+		.calendar {
+			.calendarItems {
+				@include small {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
 				}
 
-				.redBadge {
-					background-color: #d33c2a;
-					color: #fff;
-					width: 60px;
-					height: 40px;
-					padding: 0.5rem;
-					position: relative;
-					top: -13rem;
-					left: -2rem;
-				}
+				li {
+					@extend %listItem;
 
-				.itemHeader {
-					margin-top: -3rem;
-					margin-bottom: 0.5rem;
+					img {
+						@extend %imgItem;
+					}
+
+					.redBadge {
+						background-color: #d33c2a;
+						color: #fff;
+						width: 60px;
+						height: 40px;
+						padding: 0.5rem;
+						position: relative;
+						top: -13rem;
+						left: -2rem;
+					}
+
+					.itemHeader {
+						margin-top: -3rem;
+						margin-bottom: 0.5rem;
+					}
 				}
 			}
 		}
 	}
 }
+
 footer {
-	margin-top: 5rem;
 	background-color: #d33c2a;
 	color: #fff;
 	padding: 1rem;
 
-	.footerHeader {
+	a {
+		color: $secondaryColor;
+	}
+	.footerContent {
 		@include medium {
-			max-width: 960px;
+			max-width: 1024px;
 			margin: 0 auto;
 		}
-		.logo {
-			margin: 0.5rem;
-			width: 40px;
-			height: 40px;
-		}
-
-		h1 {
-			position: relative;
-			top: -3.25rem;
-			left: 4rem;
-
-			font-size: 2rem;
-		}
-	}
-
-	.footerTop {
-		margin-top: -3rem;
-		display: flex;
-		justify-content: space-between;
-
-		ul {
-			padding: 0.5rem;
-
-			li {
-				list-style: none;
+		.footerHeader {
+			.logo {
 				margin: 0.5rem;
+				width: 40px;
+				height: 40px;
+			}
+
+			h1 {
+				position: relative;
+				top: -3.25rem;
+				left: 4rem;
+				font-size: 2.3rem;
 			}
 		}
-	}
 
-	.footerIcon {
-		i {
-			font-size: 1.3rem;
-			margin: 0.5rem;
+		.footerTop {
+			margin-top: -3rem;
+			display: flex;
+			justify-content: space-between;
+
+			ul {
+				padding: 0.5rem;
+
+				li {
+					list-style: none;
+					margin: 0.5rem;
+                    font-size: 1.1rem;
+                    
+                    @include medium{
+                        font-size: 1.2rem;
+                    }
+				}
+			}
+
+			.footerIcon {
+				i {
+					margin: 0.5rem;
+				}
+			}
 		}
 	}
 }
