@@ -1,17 +1,18 @@
 $primaryColor: #d33c2a;
 $secondaryColor: #fff;
 
-@mixin extraLarge {
-	@media (min-width: 1920px) {
-		@content;
-	}
-}
-@mixin large {
-	@media (min-width: 1280px) and (max-width: 1919px) {
-		@content;
-	}
-}
-//and (max-width: 1279px)
+//? Breakpoints
+
+// @mixin extraLarge {
+// 	@media (min-width: 1920px) {
+// 		@content;
+// 	}
+// }
+// @mixin large {
+// 	@media (min-width: 1280px) and (max-width: 1919px) {
+// 		@content;
+// 	}
+// }
 @mixin medium {
 	@media (min-width: 960px) {
 		@content;
@@ -33,21 +34,6 @@ $secondaryColor: #fff;
 	font-weight: lighter;
 	font-size: 2.1rem;
 	padding-top: 1rem;
-
-	hr {
-		width: 60%;
-		position: relative;
-		top: -0.65rem;
-		left: 9rem;
-
-		@include small {
-			width: 75%;
-		}
-
-		@include medium {
-			display: none;
-		}
-	}
 }
 
 %imgItem {
@@ -57,14 +43,13 @@ $secondaryColor: #fff;
 	margin: 1rem 0;
 }
 
-//#f8f2f2
 %listItem {
 	background-color: #fff;
 	width: 87%;
 	margin: 2rem auto;
 	list-style: none;
 	border-radius: 0.3rem;
-	padding: 1rem 2rem;
+	padding: 0.5rem 1rem;
 
 	@include small {
 		width: 80%;
@@ -72,7 +57,7 @@ $secondaryColor: #fff;
 
 	@include medium {
 		width: 95%;
-		height: 380px;
+		height: 320px;
 		margin: 1rem auto;
 	}
 }
@@ -82,7 +67,7 @@ $secondaryColor: #fff;
 	margin: 3rem auto;
 	width: 90%;
 
-	button {
+	a {
 		background-color: #d33c2a;
 		color: #fff;
 		border: none;
@@ -109,10 +94,6 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	font-weight: bold;
-	font-size: 110%;
-}
 main {
 	margin-bottom: 4rem;
 
@@ -129,7 +110,7 @@ main {
 		background-color: #d33c2a;
 		margin-bottom: -1rem;
 		@include medium {
-			max-width: 1024px;
+			max-width: 1200px;
 			margin: 0 auto;
 			margin-bottom: -0.1rem;
 			height: 100px;
@@ -175,27 +156,20 @@ main {
 					}
 				}
 
-				a {
-					position: relative;
-					top: 0.3rem;
-					margin: 0 1rem;
-					.fa-bars {
-						font-size: 1.6rem;
+				.topBtn {
+					background-color: $primaryColor;
+					color: $secondaryColor;
+					border: none;
+					margin-left: 0.5rem;
+					margin-right: 0.5rem;
+					border-radius: 0.2rem;
+					font-size: 1.2rem;
+					padding: 0.5rem;
+
+					&:hover {
+						background-color: $secondaryColor;
+						color: #38100a;
 					}
-				}
-			}
-			#links {
-				display: none;
-				background-color: #d33c2a;
-				color: #fff;
-				width: 100%;
-				text-align: right;
-				padding-right: 1rem;
-				padding-bottom: 1rem;
-				li {
-					font-size: 1rem;
-					list-style: none;
-					margin-top: 1rem;
 				}
 			}
 		}
@@ -203,7 +177,7 @@ main {
 
 	.landing {
 		@include medium {
-			max-width: 1024px;
+			max-width: 1200px;
 			margin: 0 auto;
 			margin-top: 1rem;
 			display: grid;
@@ -224,21 +198,6 @@ main {
 				@include medium {
 					margin: 2rem;
 					font-size: 5rem;
-                }
-                
-             
-
-				hr {
-					width: 35%;
-					position: relative;
-					top: -1rem;
-                    left: 16.7rem;
-                    
-
-					@include small {
-						width: 65%;
-						padding-right: 3rem;
-					}
 				}
 			}
 
@@ -256,7 +215,7 @@ main {
 				}
 
 				@include medium {
-					font-size: 1.8rem;
+					font-size: 1.7rem;
 				}
 			}
 
@@ -270,29 +229,31 @@ main {
 				}
 				li {
 					list-style: none;
-					font-size: 1rem;
 					text-align: center;
-					margin: 0.3rem;
+
+					a {
+						color: $secondaryColor;
+
+						i {
+							width: 100%;
+							font-size: 1.4rem;
+							@include small {
+								font-size: 2rem;
+							}
+
+							@include medium {
+								font-size: 2.1rem;
+							}
+						}
+					}
 
 					@include small {
 						font-size: 1rem;
 					}
 
 					@include medium {
-                        margin-top: 2rem;
+						margin-top: 1.5rem;
 						font-size: 1.3rem;
-					}
-
-					i {
-						width: 100%;
-						font-size: 1.4rem;
-						@include small {
-							font-size: 2rem;
-                        }
-                        
-                        @include medium{
-                            font-size: 2.1rem;
-                        }
 					}
 				}
 			}
@@ -338,9 +299,9 @@ main {
 					margin-top: 0.5rem;
 					@include medium {
 						width: 90%;
-                        margin-top: 5rem;
-                        width: 400px;
-                        height: 35vh;
+						margin-top: 5rem;
+						width: 400px;
+						height: 35vh;
 					}
 				}
 			}
@@ -354,7 +315,7 @@ main {
 		@include medium {
 			display: grid;
 			grid-template-columns: 2fr 1fr;
-			max-width: 1024px;
+			max-width: 1200px;
 			margin: 0 auto;
 			padding-top: 3rem;
 		}
@@ -370,41 +331,45 @@ main {
 			.newsList {
 				@include small {
 					display: grid;
-                    grid-template-columns: 1fr 1fr;
-                }
+					grid-template-columns: 1fr 1fr;
+				}
 
 				li {
 					@extend %listItem;
-					@include medium {
-						display: flex;
-						padding: 3rem;
-                        
-                    }
 
-					.articleContent {
-						.articleHeader {
-							font-size: 1.5rem;
-						}
-						.articleBody {
-							margin-top: 1rem;
-							font-size: 1.1rem;
-						}
-
-						.articleDetail {
-							font-size: 0.9rem;
-							margin: 1rem 0;
-							color: #38100a;
-						}
+					a {
+						color: black;
 
 						@include medium {
-							margin: 1rem;
+							display: flex;
+							padding-top: 2rem;
 						}
-					}
-					img {
-						@extend %imgItem;
+						.articleContent {
+							.articleHeader {
+								font-size: 1.6rem;
+							}
+							.articleBody {
+								margin-top: 1rem;
+								font-size: 1.2rem;
+							}
 
-						@include medium {
-							width: 30%;
+							.articleDetail {
+								font-size: 1rem;
+								margin: 1rem 0;
+								color: #38100a;
+							}
+
+							@include medium {
+								margin: 1rem;
+							}
+						}
+						img {
+							@extend %imgItem;
+
+							@include medium {
+								height: 200px;
+								width: 30%;
+							}
 						}
 					}
 				}
@@ -460,7 +425,7 @@ footer {
 	}
 	.footerContent {
 		@include medium {
-			max-width: 1024px;
+			max-width: 1200px;
 			margin: 0 auto;
 		}
 		.footerHeader {
@@ -489,11 +454,16 @@ footer {
 				li {
 					list-style: none;
 					margin: 0.5rem;
-                    font-size: 1.1rem;
-                    
-                    @include medium{
-                        font-size: 1.2rem;
-                    }
+					font-size: 1.1rem;
+
+					@include medium {
+						font-size: 1.2rem;
+					}
+
+					a:hover {
+						font-weight: bold;
+						font-size: 110%;
+					}
 				}
 			}
 

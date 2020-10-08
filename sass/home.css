@@ -9,26 +9,7 @@ main .landing .redLeft .title, .content .mainContent .nyheter .title {
   padding-top: 1rem;
 }
 
-main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
-  width: 60%;
-  position: relative;
-  top: -0.65rem;
-  left: 9rem;
-}
-
-@media (min-width: 600px) and (max-width: 959px) {
-  main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
-    width: 75%;
-  }
-}
-
-@media (min-width: 960px) {
-  main .landing .redLeft .title hr, .content .mainContent .nyheter .title hr {
-    display: none;
-  }
-}
-
-main .landing .illustration .img img, .content .mainContent .nyheter .newsList li img, .content .mainContent .calendar .calendarItems li img {
+main .landing .illustration .img img, .content .mainContent .nyheter .newsList li a img, .content .mainContent .calendar .calendarItems li img {
   height: 200px;
   width: 100%;
   border-radius: 0.3rem;
@@ -41,7 +22,7 @@ main .landing .illustration .img img, .content .mainContent .nyheter .newsList l
   margin: 2rem auto;
   list-style: none;
   border-radius: 0.3rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -53,7 +34,7 @@ main .landing .illustration .img img, .content .mainContent .nyheter .newsList l
 @media (min-width: 960px) {
   .content .mainContent .nyheter .newsList li, .content .mainContent .calendar .calendarItems li {
     width: 95%;
-    height: 380px;
+    height: 320px;
     margin: 1rem auto;
   }
 }
@@ -64,7 +45,7 @@ main .landing .illustration .img img, .content .mainContent .nyheter .newsList l
   width: 90%;
 }
 
-.content .mainContent .nyheter .btnHolder button {
+.content .mainContent .nyheter .btnHolder a {
   background-color: #d33c2a;
   color: #fff;
   border: none;
@@ -89,11 +70,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-a:hover {
-  font-weight: bold;
-  font-size: 110%;
 }
 
 main {
@@ -124,7 +100,7 @@ main header {
 
 @media (min-width: 960px) {
   main header {
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-bottom: -0.1rem;
     height: 100px;
@@ -183,35 +159,25 @@ main header nav .rightNav .search {
   }
 }
 
-main header nav .rightNav a {
-  position: relative;
-  top: 0.3rem;
-  margin: 0 1rem;
-}
-
-main header nav .rightNav a .fa-bars {
-  font-size: 1.6rem;
-}
-
-main header nav #links {
-  display: none;
+main header nav .rightNav .topBtn {
   background-color: #d33c2a;
   color: #fff;
-  width: 100%;
-  text-align: right;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
+  border: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
 }
 
-main header nav #links li {
-  font-size: 1rem;
-  list-style: none;
-  margin-top: 1rem;
+main header nav .rightNav .topBtn:hover {
+  background-color: #fff;
+  color: #38100a;
 }
 
 @media (min-width: 960px) {
   main .landing {
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-top: 1rem;
     display: -ms-grid;
@@ -240,20 +206,6 @@ main .landing .redLeft .title {
   }
 }
 
-main .landing .redLeft .title hr {
-  width: 35%;
-  position: relative;
-  top: -1rem;
-  left: 16.7rem;
-}
-
-@media (min-width: 600px) and (max-width: 959px) {
-  main .landing .redLeft .title hr {
-    width: 65%;
-    padding-right: 3rem;
-  }
-}
-
 main .landing .redLeft p {
   margin-top: 1rem;
   font-size: 1.5rem;
@@ -272,7 +224,7 @@ main .landing .redLeft p {
 
 @media (min-width: 960px) {
   main .landing .redLeft p {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -294,9 +246,28 @@ main .landing .redLeft .iconList {
 
 main .landing .redLeft .iconList li {
   list-style: none;
-  font-size: 1rem;
   text-align: center;
-  margin: 0.3rem;
+}
+
+main .landing .redLeft .iconList li a {
+  color: #fff;
+}
+
+main .landing .redLeft .iconList li a i {
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  main .landing .redLeft .iconList li a i {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 960px) {
+  main .landing .redLeft .iconList li a i {
+    font-size: 2.1rem;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -307,25 +278,8 @@ main .landing .redLeft .iconList li {
 
 @media (min-width: 960px) {
   main .landing .redLeft .iconList li {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-size: 1.3rem;
-  }
-}
-
-main .landing .redLeft .iconList li i {
-  width: 100%;
-  font-size: 1.4rem;
-}
-
-@media (min-width: 600px) and (max-width: 959px) {
-  main .landing .redLeft .iconList li i {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 960px) {
-  main .landing .redLeft .iconList li i {
-    font-size: 2.1rem;
   }
 }
 
@@ -397,7 +351,7 @@ main .landing .illustration .img img {
     display: grid;
     -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     padding-top: 3rem;
   }
@@ -422,38 +376,43 @@ main .landing .illustration .img img {
   }
 }
 
+.content .mainContent .nyheter .newsList li a {
+  color: black;
+}
+
 @media (min-width: 960px) {
-  .content .mainContent .nyheter .newsList li {
+  .content .mainContent .nyheter .newsList li a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 3rem;
+    padding-top: 2rem;
   }
 }
 
-.content .mainContent .nyheter .newsList li .articleContent .articleHeader {
-  font-size: 1.5rem;
+.content .mainContent .nyheter .newsList li a .articleContent .articleHeader {
+  font-size: 1.6rem;
 }
 
-.content .mainContent .nyheter .newsList li .articleContent .articleBody {
+.content .mainContent .nyheter .newsList li a .articleContent .articleBody {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
-.content .mainContent .nyheter .newsList li .articleContent .articleDetail {
-  font-size: 0.9rem;
+.content .mainContent .nyheter .newsList li a .articleContent .articleDetail {
+  font-size: 1rem;
   margin: 1rem 0;
   color: #38100a;
 }
 
 @media (min-width: 960px) {
-  .content .mainContent .nyheter .newsList li .articleContent {
+  .content .mainContent .nyheter .newsList li a .articleContent {
     margin: 1rem;
   }
 }
 
 @media (min-width: 960px) {
-  .content .mainContent .nyheter .newsList li img {
+  .content .mainContent .nyheter .newsList li a img {
+    height: 200px;
     width: 30%;
   }
 }
@@ -495,7 +454,7 @@ footer a {
 
 @media (min-width: 960px) {
   footer .footerContent {
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
@@ -537,6 +496,11 @@ footer .footerContent .footerTop ul li {
   footer .footerContent .footerTop ul li {
     font-size: 1.2rem;
   }
+}
+
+footer .footerContent .footerTop ul li a:hover {
+  font-weight: bold;
+  font-size: 110%;
 }
 
 footer .footerContent .footerTop .footerIcon i {

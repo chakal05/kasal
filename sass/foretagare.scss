@@ -1,0 +1,43 @@
+@mixin medium {
+	@media (min-width: 960px) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (min-width: 600px) and (max-width: 959px) {
+		@content;
+	}
+}
+
+.content {
+	.mainContent {
+		.sjalvservice {
+			margin-bottom: 4rem;
+			.items {
+				li {
+					list-style: none;
+					margin: 1rem;
+					background-color: #fff;
+					padding: 2rem;
+					height: 100px;
+					text-align: center;
+
+					a {
+						text-decoration: none;
+						color: #38100a;
+
+						&:hover {
+							font-size: large;
+						}
+					}
+
+					@include small {
+						margin: 2rem auto;
+						width: 70%;
+					}
+				}
+			}
+		}
+	}
+}
